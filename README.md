@@ -15,7 +15,11 @@ And if you have any problem, please contact me.
 * significant improvement was made, long text predictions more accurate.(please
 see 'demo results' part bellow,
 and pay attention to the activation image,
-which starts with yellow grids, and ends with green grids.)
+which starts with yellow grids, and ends with green grids.) In my experiments,
+AdvancedEast has obtained much better prediction accuracy then East,
+especially on long text. Since East calculates final vertexes coordinates with
+weighted mean values of predicted vertexes coordinates of all pixels. It is too
+difficult to predict the 2 vertexes from the other side of the quadrangle.
 
 # setup
 * python 3.6.3+
