@@ -4,6 +4,7 @@ which is primarily based on
 [EAST:An Efficient and Accurate Scene Text Detector](https://arxiv.org/abs/1704.03155v2),
 and the significant improvement was also made,
 which make long text predictions more accurate.
+If this project is helpful to you, welcome to star.
 
 # advantages
 * writen in keras, easy to read and run
@@ -50,6 +51,9 @@ which starts with yellow grids, and ends with green grids.)
 ![007原图](demo/007.png "007原图")
 ![007激活图](demo/007.png_act.jpg "007激活图")
 ![007预测图](demo/007.png_predict.jpg "007预测图")
+
+# License
+The codes are released under the MIT License.
 
 # references
 * [EAST:An Efficient and Accurate Scene Text Detector](https://arxiv.org/abs/1704.03155v2)
