@@ -5,6 +5,9 @@ which is primarily based on
 and the significant improvement was also made,
 which make long text predictions more accurate.
 If this project is helpful to you, welcome to star.
+And if you have any problem, please contact me.
+* email:yijie.huo@foxmail.com
+* wechat:gekongdianxue
 
 # advantages
 * writen in keras, easy to read and run
