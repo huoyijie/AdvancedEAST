@@ -93,7 +93,7 @@ def predict(img_path, pixel_threshold):
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--path', '-p',
-                        default='demo/002.jpg',
+                        default='demo/012.png',
                         help='image path')
     parser.add_argument('--threshold', '-t',
                         default=cfg.pixel_threshold,

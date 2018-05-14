@@ -1,4 +1,4 @@
-train_task_id = '1T256'
+train_task_id = '2T736'
 initial_epoch = 0
 epoch_num = 24
 lr = 1e-3
