@@ -12,21 +12,19 @@ And if you have any problem, please contact me.
 # advantages
 * writen in keras, easy to read and run
 * base on EAST, an advanced text detect algorithm
+* easy to train the model
 * significant improvement was made, long text predictions more accurate.(please
 see 'demo results' part bellow,
 and pay attention to the activation image,
-which starts with yellow grids, and ends with green grids.) In my experiments,
+which starts with yellow grids, and ends with green grids.) 
+
+In my experiments,
 AdvancedEast has obtained much better prediction accuracy then East,
 especially on long text. Since East calculates final vertexes coordinates with
 weighted mean values of predicted vertexes coordinates of all pixels. It is too
 difficult to predict the 2 vertexes from the other side of the quadrangle.
-
-# setup
-* python 3.6.3+
-* tensorflow-gpu 1.5.0+(or tensorflow 1.5.0+)
-* keras 2.1.4+
-* numpy 1.14.1+
-* tqdm 4.19.7+
+See East limitations picked from original paper bellow.
+![East limitations](image/East.limitations.png "East limitations")
 
 # project files
 * config file:cfg.py,control parameters
@@ -42,6 +40,23 @@ difficult to predict the 2 vertexes from the other side of the quadrangle.
     advanced_east.py and data_generator.py
 * predict
     predict.py and nms.py
+
+# network arch
+* AdvancedEast
+
+![AdvancedEast network arch](image/AdvancedEast.network.png "AdvancedEast network arch")
+
+* East
+
+![East network arch](image/East.network.png "East network arch")
+
+
+# setup
+* python 3.6.3+
+* tensorflow-gpu 1.5.0+(or tensorflow 1.5.0+)
+* keras 2.1.4+
+* numpy 1.14.1+
+* tqdm 4.19.7+
 
 # training
 * prepare training data:make data root dir(icpr),
@@ -71,6 +86,13 @@ and train respectively could speed up training process.
 ![007原图](demo/007.png "007原图")
 ![007激活图](demo/007.png_act.jpg "007激活图")
 ![007预测图](demo/007.png_predict.jpg "007预测图")
+
+* compared with east based on vgg16
+
+As you can see, although the text area prediction is very accurate, the vertex coordinates are not accurate enough.
+
+![001激活图](demo/001.png_act_east.jpg "001激活图")
+![001预测图](demo/001.png_predict_east.jpg "001预测图")
 
 # License
 The codes are released under the MIT License.
