@@ -101,3 +101,5 @@ The codes are released under the MIT License.
 * [EAST:An Efficient and Accurate Scene Text Detector](https://arxiv.org/abs/1704.03155v2)
 
 * [CTPN:Detecting Text in Natural Image with Connectionist Text Proposal Network](https://arxiv.org/abs/1609.03605)
+
+刚刚接触深度学习，有些地方理解还不够深入，可能会有一些错误，请大家多多包涵指正：）
