@@ -83,10 +83,6 @@ and train respectively could speed up training process.
 ![005激活图](demo/005.png_act.jpg "005激活图")
 ![005预测图](demo/005.png_predict.jpg "005预测图")
 
-![007原图](demo/007.png "007原图")
-![007激活图](demo/007.png_act.jpg "007激活图")
-![007预测图](demo/007.png_predict.jpg "007预测图")
-
 * compared with east based on vgg16
 
 As you can see, although the text area prediction is very accurate, the vertex coordinates are not accurate enough.
