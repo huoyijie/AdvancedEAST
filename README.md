@@ -59,6 +59,9 @@ See East limitations picked from original paper bellow.
 * tqdm 4.19.7+
 
 # training
+* tianchi ICPR dataset download
+链接: https://pan.baidu.com/s/1NSyc-cHKV3IwDo6qojIrKA 密码: ye9y
+
 * prepare training data:make data root dir(icpr),
 copy images to root dir, and copy txts to root dir,
 data format details could refer to 'ICPR MTWI 2018 挑战赛二：网络图像的文本检测',
