@@ -41,7 +41,7 @@ val_fname = 'val_%s.txt' % train_task_id
 train_fname = 'train_%s.txt' % train_task_id
 # in paper it's 0.3, maybe to large to this problem
 shrink_ratio = 0.2
-# pixels between 0.1 and 0.3 are side pixels
+# pixels between 0.2 and 0.6 are side pixels
 shrink_side_ratio = 0.6
 epsilon = 1e-4
 
