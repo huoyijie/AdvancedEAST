@@ -62,12 +62,13 @@ class East:
             return conv_3
 
     def east_network(self):
+        before_output = self.g(cfg.feature_layers_num)
         inside_score = Conv2D(1, 1, padding='same', name='inside_score'
-                              )(self.g(cfg.feature_layers_num))
+                              )(before_output)
         side_v_code = Conv2D(2, 1, padding='same', name='side_vertex_code'
-                             )(self.g(cfg.feature_layers_num))
+                             )(before_output)
         side_v_coord = Conv2D(4, 1, padding='same', name='side_vertex_coord'
-                              )(self.g(cfg.feature_layers_num))
+                              )(before_output)
         east_detect = Concatenate(axis=-1,
                                   name='east_detect')([inside_score,
                                                        side_v_code,
