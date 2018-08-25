@@ -76,8 +76,8 @@ and train respectively could speed up training process.
 * python label.py
 * python advanced_east.py
 * python predict.py -p demo/001.png, to predict
-* pretrain model download
-链接: https://pan.baidu.com/s/11rNLfNJ3bI4d500--uqR4A 密码: khk1
+* pretrain model download(use for test)
+链接: https://pan.baidu.com/s/1KO7tR_MW767ggmbTjIJpuQ 密码: kpm2
 
 # demo results
 ![001原图](demo/001.png "001原图")
