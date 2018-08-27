@@ -39,6 +39,7 @@ See East limitations picked from original paper bellow.
     advanced_east.py and data_generator.py
 * predict
     predict.py and nms.py
+**后置处理过程说明参见[后置处理(含原理图)](https://huoyijie.github.io/2018/08/27/AdvancedEAST%E5%90%8E%E7%BD%AE%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86%E7%AE%80%E4%BB%8B/)**
 
 # network arch
 * AdvancedEast
