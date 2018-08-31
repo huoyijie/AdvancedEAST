@@ -77,7 +77,7 @@ data format details could refer to 'ICPR MTWI 2018 挑战赛二：网络图像�
 * python preprocess.py, resize image to 256*256,384*384,512*512,640*640,736*736,
 and train respectively could speed up training process.
 * python label.py
-* python advanced_east.py
+* python advanced_east.py, train entrance
 * python predict.py -p demo/001.png, to predict
 * pretrain model download(use for test)
 链接: https://pan.baidu.com/s/1KO7tR_MW767ggmbTjIJpuQ 密码: kpm2
