@@ -12,7 +12,7 @@ lambda_inside_score_loss = 4.0
 lambda_side_vertex_code_loss = 1.0
 lambda_side_vertex_coord_loss = 1.0
 
-total_img = 10000
+total_img = 1000
 validation_split_ratio = 0.1
 max_train_img_size = int(train_task_id[-3:])
 max_predict_img_size = int(train_task_id[-3:])  # 2400
@@ -30,8 +30,8 @@ steps_per_epoch = total_img * (1 - validation_split_ratio) // batch_size
 validation_steps = total_img * validation_split_ratio // batch_size
 
 data_dir = 'icpr/'
-origin_image_dir_name = 'image_10000/'
-origin_txt_dir_name = 'txt_10000/'
+origin_image_dir_name = 'image_1000/'
+origin_txt_dir_name = 'txt_1000/'
 train_image_dir_name = 'images_%s/' % train_task_id
 train_label_dir_name = 'labels_%s/' % train_task_id
 show_gt_image_dir_name = 'show_gt_images_%s/' % train_task_id
