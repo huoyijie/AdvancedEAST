@@ -1,0 +1,235 @@
+* {
+      margin: 0;
+      padding: 0;
+      }
+
+      .cut {
+        width: 1500px;
+        height: 1125px;
+        margin: 30px auto;
+      }
+
+      .c-item {
+        max-width: 800px;
+        margin: 10px auto;
+        margin-top: 20px;
+      }
+    
+      .content {
+        margin: auto;
+        max-width: 1200px;
+        margin-bottom: 100px;
+      }
+    
+      .test-button {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+      }
+    
+      .btn {
+        display: inline-block;
+        line-height: 1;
+        white-space: nowrap;
+        cursor: pointer;
+        background: #fff;
+        border: 1px solid #c0ccda;
+        color: #1f2d3d;
+        text-align: center;
+        box-sizing: border-box;
+        outline: none;
+        margin:20px 10px 0px 0px;
+        padding: 9px 15px;
+        font-size: 14px;
+        border-radius: 4px;
+        color: #fff;
+        background-color: #50bfff;
+        border-color: #50bfff;
+        transition: all .2s ease;
+        text-decoration: none;
+        user-select: none;
+      }
+    
+      .des {
+        line-height: 30px;
+      }
+    
+      code.language-html {
+        padding: 10px 20px;
+        margin: 10px 0px;
+        display: block;
+        background-color: #333;
+        color: #fff;
+        overflow-x: auto;
+        font-family: Consolas, Monaco, Droid, Sans, Mono, Source, Code, Pro, Menlo, Lucida, Sans, Type, Writer, Ubuntu, Mono;
+        border-radius: 5px;
+        white-space: pre;
+      }
+    
+      .show-info {
+        margin-bottom: 50px;
+      }
+    
+      .show-info h2 {
+        line-height: 50px;
+      }
+    
+      /*.title, .title:hover, .title-focus, .title:visited {
+        color: black;
+      }*/
+    
+      .title {
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        line-height: 1.5;
+        margin: 20px 0px;
+        background-image: -webkit-linear-gradient(left,#3498db,#f47920 10%,#d71345 20%,#f7acbc 30%,#ffd400 40%,#3498db 50%,#f47920 60%,#d71345 70%,#f7acbc 80%,#ffd400 90%,#3498db);
+        color: transparent;
+        -webkit-background-clip: text;
+        background-size: 200% 100%;
+        animation: slide 5s infinite linear;
+        font-size: 40px;
+      }
+    
+      .test {
+        height: 500px;
+      }
+    
+      .model {
+        position: fixed;
+        z-index: 10;
+        width: 100vw;
+        height: 100vh;
+        overflow: auto;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.8);
+      }
+    
+      .model-show {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+      }
+    
+      .model img {
+        display: block;
+        margin: auto;
+        max-width: 80%;
+        user-select: none;
+        background-position: 0px 0px, 10px 10px;
+        background-size: 20px 20px;
+        background-image: linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%, #eee 100%),linear-gradient(45deg, #eee 25%, white 25%, white 75%, #eee 75%, #eee 100%);
+      }
+    
+      .c-item {
+        display: block;
+        user-select: none;
+      }
+    
+      @keyframes slide {
+        0%  {
+          background-position: 0 0;
+        }
+        100% {
+          background-position: -100% 0;
+        }
+      }
+
+/* 触发弹窗图片的样式 */
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+ 
+#myImg:hover {opacity: 0.7;}
+ 
+/* 弹窗背景 */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+ 
+/* 图片 */
+.modal-content {
+    margin: auto;
+    display: block;
+    /*width: 70%;
+    height: 70%;*/
+    /*max-width: 700px;*/
+}
+ 
+/* 文本内容 */
+/*#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}*/
+ 
+/* 添加动画 */
+.modal-content, #caption { 
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+ 
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+ 
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+ 
+/* 关闭按钮 */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+ 
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+ 
+/* 小屏幕中图片宽度为 100% */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+
+#result-text {
+    width: 1000px;
+    height: 300px;
+    margin: 30px auto;
+}

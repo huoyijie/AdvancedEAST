@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="cn" >
+<head>
+  <meta charset="UTF-8">
+  <title>文字识别</title>
+  <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+   <div class ="app" id="app">
+    <div class="model" v-show="model" @click="model = false">
+      <div class="model-show">
+        <img :src="modelSrc" alt="">
+      </div>
+    </div>
+    <!-- <p>例子</p> -->
+    <div class="cut">
+      <vue-cropper ref="cropper" :img="option.img" :output-size="option.size" :output-type="option.outputType" :info="true" :full="option.full" :fixed="fixed" :fixed-number="fixedNumber"
+        :can-move="option.canMove" :can-move-box="option.canMoveBox" :fixed-box="option.fixedBox" :original="option.original"
+        :auto-crop="option.autoCrop" :auto-crop-width="option.autoCropWidth" :auto-crop-height="option.autoCropHeight" :center-box="option.centerBox"
+				@real-time="realTime" :high="option.high"
+          @img-load="imgLoad" mode="cover"></vue-cropper>
+    </div>
+    <!-- <div class="show-preview" :style="{'width': previews.w + 'px', 'height': previews.h + 'px',  'overflow': 'hidden', 'margin': '5px'}">
+      <div :style="previews.div">
+        <img :src="previews.url" :style="previews.img">
+      </div>
+    </div> -->
+    <!-- 弹窗 -->
+    <div id="myModal" class="modal">
+      <!-- 关闭按钮 -->
+      <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+      <!-- 弹窗内容 -->
+      <img class="modal-content" id="img01">
+      <!-- 文本描述 -->
+      <!-- <div id="caption"></div> -->
+    </div>
+    <div class="test-button">
+      <!-- <button @click="changeImg" class="btn">changeImg</button> -->
+      <label class="btn" for="uploads">选择图片</label>
+      <input type="file" id="uploads" style="position:absolute; clip:rect(0 0 0 0);" accept="image/png, image/jpeg, image/gif, image/jpg"
+        @change="uploadImg($event, 1)">
+      <button @click="startCrop" v-if="!crap" class="btn">开始截取</button>
+      <button @click="stopCrop" v-else class="btn">停止截取</button>
+      <button @click="clearCrop" class="btn">清除截取</button>
+      <!-- <button @click="refreshCrop" class="btn">refresh</button> -->
+      <button @click="changeScale(1)" class="btn">+</button>
+      <button @click="changeScale(-1)" class="btn">-</button>
+      <!-- <button @click="rotateLeft" class="btn">rotateLeft</button>
+      <button @click="rotateRight" class="btn">rotateRight</button> -->
+      <button @click="finish('base64')" class="btn">开始识别</button>
+      <!-- <button @click="finish('blob')" class="btn">preview(blob)</button>
+      <a @click="down('base64')" class="btn">download(base64)</a>
+      <a @click="down('blob')" class="btn">download(blob)</a> -->
+      <!-- <div style="display:block; width: 100%;">
+        <label class="c-item">
+          <span>上传图片是否显示原始宽高 (针对大图 可以铺满)</span>
+          <input type="checkbox" v-model="option.original">
+          <span>original: {{ option.original}}</span>
+        </label>
+        <label class="c-item">
+          <span>能否拖动图片</span>
+          <input type="checkbox" v-model="option.canMove">
+        </label>
+        <label class="c-item">
+          <span>能否拖动截图框</span>
+          <input type="checkbox" v-model="option.canMoveBox">
+          <span>canMoveBox: {{ option.canMoveBox}}</span>
+        </label>
+        <label class="c-item">
+          <span>截图框固定大小</span>
+          <input type="checkbox" v-model="option.fixedBox">
+          <span>fixedBox: {{ option.fixedBox}}</span>
+        </label>
+        <label class="c-item">
+          <span>是否输出原图比例的截图</span>
+          <input type="checkbox" v-model="option.full">
+          <span>full: {{ option.full}}</span>
+        </label>
+        <label class="c-item">
+          <span>是否自动生成截图框</span>
+          <input type="checkbox" v-model="option.autoCrop">
+          <span>autoCrop: {{ option.autoCrop}}</span>
+        </label>
+        <label class="c-item">
+          <span>是否根据dpr生成适合屏幕的高清图片</span>
+          <input type="checkbox" v-model="option.high">
+          <span>high: {{ option.high}}</span>
+        </label>
+        <label class="c-item">
+          <span>截图框是否限制在图片里(只有在自动生成截图框时才能生效)</span>
+          <input type="checkbox" v-model="option.centerBox">
+          <span>centerBox: {{ option.centerBox}}</span>
+        </label>
+        <label class="c-item">
+          <p>输出图片格式</p>
+          <label>jpg
+            <input type="radio" name="type" value="jpeg" v-model="option.outputType">
+          </label>
+          <label>png
+            <input type="radio" name="type" value="png" v-model="option.outputType">
+          </label>
+          <label>webp
+            <input type="radio" name="type" value="webp" v-model="option.outputType">
+          </label>
+        </label>
+      </div> -->
+    </div>
+    <div class="result" style="text-align:center;">
+      <textarea id="result-text" value=""></textarea>
+    </div>
+  </div>
+  <!-- <script src="https://vuejs.org/js/vue.min.js"></script> -->
+  <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue-cropper@0.4.9/dist/index.min.js"></script>
+  <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
+<!-- partial -->
+  <script  src="../static/js/script.js"></script>
+</body>
+</html>

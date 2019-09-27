@@ -10,7 +10,10 @@ from label import point_inside_of_quad
 from network import East
 from preprocess import resize_image
 from nms import nms
+import tensorflow as tf
 
+global graph
+graph = tf.get_default_graph()
 
 def sigmoid(x):
     """`y = 1 / (1 + exp(-x))`"""
@@ -30,7 +33,7 @@ def cut_text_line(geo, scale_ratio_w, scale_ratio_h, im_array, img_path, s):
                 sub_im_arr[m - min_xy[1], n - min_xy[0], :] = 255
     sub_im = image.array_to_img(sub_im_arr, scale=False)
     sub_im.save(img_path + '_subim%d.jpg' % s)
-
+    return img_path + '_subim%d.jpg' % s
 
 def predict(east_detect, img_path, pixel_threshold, quiet=False):
     img = image.load_img(img_path)
@@ -39,7 +42,8 @@ def predict(east_detect, img_path, pixel_threshold, quiet=False):
     img = image.img_to_array(img)
     img = preprocess_input(img, mode='tf')
     x = np.expand_dims(img, axis=0)
-    y = east_detect.predict(x)
+    with graph.as_default():
+        y = east_detect.predict(x)
 
     y = np.squeeze(y, axis=0)
     y[:, :, :3] = sigmoid(y[:, :, :3])
@@ -72,6 +76,7 @@ def predict(east_detect, img_path, pixel_threshold, quiet=False):
         im.save(img_path + '_act.jpg')
         quad_draw = ImageDraw.Draw(quad_im)
         txt_items = []
+        sub_imgs = []
         for score, geo, s in zip(quad_scores, quad_after_nms,
                                  range(len(quad_scores))):
             if np.amin(score) > 0:
@@ -81,21 +86,23 @@ def predict(east_detect, img_path, pixel_threshold, quiet=False):
                                 tuple(geo[3]),
                                 tuple(geo[0])], width=2, fill='red')
                 if cfg.predict_cut_text_line:
-                    cut_text_line(geo, scale_ratio_w, scale_ratio_h, im_array,
+                    sub_img = cut_text_line(geo, scale_ratio_w, scale_ratio_h, im_array,
                                   img_path, s)
                 rescaled_geo = geo / [scale_ratio_w, scale_ratio_h]
                 rescaled_geo_list = np.reshape(rescaled_geo, (8,)).tolist()
                 txt_item = ','.join(map(str, rescaled_geo_list))
                 txt_items.append(txt_item + '\n')
+                sub_imgs.append(sub_img)
             elif not quiet:
                 print('quad invalid with vertex num less then 4.')
         quad_im.save(img_path + '_predict.jpg')
         if cfg.predict_write2txt and len(txt_items) > 0:
             with open(img_path[:-4] + '.txt', 'w') as f_txt:
                 f_txt.writelines(txt_items)
+        return img_path + '_predict.jpg', sub_imgs
 
 
-def predict_txt(east_detect, img_path, txt_path, pixel_threshold, quiet=False):
+def predict_txt(east_detect, img_path, txt_path, pixel_threshold, quiet=True):
     img = image.load_img(img_path)
     d_wight, d_height = resize_image(img, cfg.max_predict_img_size)
     scale_ratio_w = d_wight / img.width
@@ -136,6 +143,12 @@ def parse_args():
                         help='pixel activation threshold')
     return parser.parse_args()
 
+# AdvancedEAST 模型
+def east_detect():
+    east = East()
+    east_detect = east.east_network()
+    east_detect.load_weights(cfg.saved_model_weights_file_path)
+    return east_detect
 
 if __name__ == '__main__':
     args = parse_args()
