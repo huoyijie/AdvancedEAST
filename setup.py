@@ -1,7 +1,12 @@
 from setuptools import setup, find_packages
 
+INSTALL_REQUIRES = ['Pillow']
+PACKAGE_NAME = 'advancedeast'
+PACKAGE_DIR = '.'
+
 setup(
-    name='advancedeast', 
-    version='0.0.1', 
-    packages=find_packages()
+    name=PACKAGE_NAME, 
+    version='0.0.1',
+    packages=[PACKAGE_NAME],
+    package_dir={PACKAGE_NAME: PACKAGE_DIR},
 )
