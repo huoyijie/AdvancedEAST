@@ -1,1 +1,1 @@
-__all__ = ['.', 'network', 'preprocess']
+__all__ = ['.', 'network', 'preprocess', 'cfg']
