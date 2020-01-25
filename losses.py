@@ -1,6 +1,6 @@
 import tensorflow as tf
 
-import cfg
+from . import cfg
 
 
 def quad_loss(y_true, y_pred):
