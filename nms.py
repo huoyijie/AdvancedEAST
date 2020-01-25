@@ -1,7 +1,7 @@
 # coding=utf-8
 import numpy as np
 
-import cfg
+from . import cfg
 
 
 def should_merge(region, i, j):
