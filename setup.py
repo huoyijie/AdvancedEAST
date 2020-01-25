@@ -1,6 +1,5 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 
-INSTALL_REQUIRES = ['Pillow']
 PACKAGE_NAME = 'advancedeast'
 PACKAGE_DIR = '.'
 
