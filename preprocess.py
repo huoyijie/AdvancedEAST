@@ -4,7 +4,7 @@ import os
 import random
 from tqdm import tqdm
 
-import cfg
+from . import cfg
 from label import shrink
 
 
