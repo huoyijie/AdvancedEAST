@@ -5,11 +5,11 @@ from PIL import Image, ImageDraw
 from keras.preprocessing import image
 from keras.applications.vgg16 import preprocess_input
 
-import cfg
-from label import point_inside_of_quad
-from network import East
-from preprocess import resize_image
-from nms import nms
+from . import cfg
+from .label import point_inside_of_quad
+from .network import East
+from .preprocess import resize_image
+from .nms import nms
 
 
 def sigmoid(x):
