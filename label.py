@@ -2,7 +2,8 @@ import numpy as np
 import os
 from PIL import Image, ImageDraw
 from tqdm import tqdm
-import cfg
+
+from . import cfg
 
 
 def point_inside_of_quad(px, py, quad_xy_list, p_min, p_max):
