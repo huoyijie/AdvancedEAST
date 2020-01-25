@@ -3,7 +3,7 @@ from keras import Input, Model
 from keras.applications.vgg16 import VGG16
 from keras.layers import Concatenate, Conv2D, UpSampling2D, BatchNormalization
 
-import cfg
+import .cfg
 
 """
 input_shape=(img.height, img.width, 3), height and width must scaled by 32.
