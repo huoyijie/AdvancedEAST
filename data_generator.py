@@ -3,7 +3,7 @@ import numpy as np
 from keras.preprocessing import image
 from keras.applications.vgg16 import preprocess_input
 
-import cfg
+from . import cfg
 
 
 def gen(batch_size=cfg.batch_size, is_val=False):
