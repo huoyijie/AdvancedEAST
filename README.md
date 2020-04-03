@@ -119,4 +119,4 @@ The codes are released under the MIT License.
 [原理简介(含原理图)](https://huoyijie.github.io/zh-Hans/2018/08/24/AdvancedEAST%E6%96%87%E6%9C%AC%E6%A3%80%E6%B5%8B%E5%8E%9F%E7%90%86%E7%AE%80%E4%BB%8B/)
 
 **后置处理过程说明参见
-[后置处理(含原理图)](https://huoyijie.github.io/zh-Hans/2018/08/27/AdvancedEAST%E5%90%8E%E7%BD%AE%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86%E7%AE%80%E4%BB%8B/)**
+[后置处理(含原理图)](https://huoyijie.cn/blog/9a37ea00-755f-11ea-98d3-6d733527e90f/play)**
