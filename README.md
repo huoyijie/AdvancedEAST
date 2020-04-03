@@ -7,6 +7,7 @@ which make long text predictions more accurate.
 If this project is helpful to you, welcome to star.
 And if you have any problem, please contact me.
 * email:yijie.huo@foxmail.com
+* website:[https://huoyijie.cn](https://huoyijie.cn)
 
 # advantages
 * writen in keras, easy to read and run
