@@ -121,3 +121,5 @@ The codes are released under the MIT License.
 
 **后置处理过程说明参见
 [后置处理(含原理图)](https://huoyijie.cn/blog/82c8e470-7562-11ea-98d3-6d733527e90f/play)**
+
+[A Simple RaspberryPi Car Project](https://github.com/huoyijie/raspberrypi-car)
