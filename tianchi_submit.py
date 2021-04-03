@@ -1,9 +1,9 @@
 import os
-
 from tqdm import tqdm
-from network import East
-from predict import predict_txt
-import cfg
+
+from .network import East
+from .predict import predict_txt
+from . import cfg
 
 
 if __name__ == '__main__':

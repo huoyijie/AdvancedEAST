@@ -2,7 +2,7 @@ import os
 from keras.callbacks import EarlyStopping, ModelCheckpoint
 from keras.optimizers import Adam
 
-import cfg
+from . import cfg
 from network import East
 from losses import quad_loss
 from data_generator import gen

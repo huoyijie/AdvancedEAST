@@ -4,8 +4,8 @@ import os
 import random
 from tqdm import tqdm
 
-import cfg
-from label import shrink
+from . import cfg
+from .label import shrink
 
 
 def batch_reorder_vertexes(xy_list_array):
